@@ -4,7 +4,7 @@
 ### I use "visitorqueue" As the container name, change the name inside server.js if you use other name
 
 ### Application Menu
-###1. Print or request  number
+### 1. Print or request  number
 Visitor pick a category of their visit, the system check for the next number available for that category, write it to database and print it out. 
 
 ### 2. Input new visitor
