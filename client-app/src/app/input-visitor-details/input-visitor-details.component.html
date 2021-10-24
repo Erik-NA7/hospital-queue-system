@@ -1,0 +1,37 @@
+<mat-toolbar class="myheader">
+  <span>Register Visitor</span>
+</mat-toolbar>
+<div class="container">
+  <mat-card>
+    <h3>Visitor Data</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="visitor.nama">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Kategori Kunjungan</mat-label>
+      <mat-select [(ngModel)]="visitor.kategoriKunjungan">
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C">C</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Kategori Pasien</mat-label>
+      <mat-select [(ngModel)]="visitor.kategoriPasien">
+        <mat-option value="PA">PA</mat-option>
+        <mat-option value="PB">PB</mat-option>
+        <mat-option value="PC">PC</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="button-container">
+      <button mat-raised-button class="mybutton" color="primary" (click)="saveVisitor()">Save</button>
+    </div>
+    <div class="button-container"  *ngIf="submitted">
+      <h3>Data Saved Successfully</h3>
+      <button mat-raised-button class="mybutton" color="primary" (click)="newVisitor()">OK</button>
+    </div>
+  </mat-card>
+</div>
+

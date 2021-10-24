@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+mat-card {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.display-newnumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.display-newnumber p {
+  margin: 0.3rem;
+  text-align: center;
+}
+
+.display-newnumber h1 {
+  margin: 0.3rem;
+  font-size: 4rem;
+}
+
+.display-newnumber h2 {
+  width: 100%;
+  margin: 0.3rem;
+  text-align: center;
+  border-bottom: 2px solid #000000;
+}
+
+.with-border {
+  width: 100%;
+  border-bottom: 2px solid #000000;
+}

@@ -1,0 +1,32 @@
+<mat-toolbar class="myheader">
+  <span>Queue Number</span>
+</mat-toolbar>
+<div class="container">
+  <mat-card>
+    <h3>Request Number</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Visit Category</mat-label>
+      <mat-select [(ngModel)]="visitCategory">
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C">C</mat-option>
+      </mat-select>
+    </mat-form-field> 
+    <div class="button-container">
+      <button mat-raised-button class="mybutton" color="primary" (click)="requestNumber()">Get Number</button>
+    </div>
+    <div *ngIf="submitted" class="display-newnumber">
+      <h2>Hospital Queue</h2>
+      <p>Nomor Antrian Anda:</p>
+      <h1>{{ queueNumber.displayNumber }}</h1>
+      <p>Mohon Menunggu</p>
+      <p class="with-border">{{ queueNumber.tanggal }}</p>
+      <p>Budayakan antri untuk kenyamanan bersama</p>
+      <p>Terima Kasih atas kunjungan anda</p>
+      
+      <button mat-raised-button class="mybutton" color="primary" (click)="newNumber()">OK</button>
+    </div>
+  </mat-card>
+</div>
+
+  
