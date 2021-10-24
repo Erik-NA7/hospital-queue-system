@@ -10,10 +10,7 @@ router.post('/', Controller.create)
 router.get('/', Controller.findAll)
 
 /* Get a single visitor */
-router.get('/:id', Controller.findOne)
-
-/* Dequeue a visitor */
-router.put('/dequeue/:nomorAntri', Controller.dequeue)
+router.get('/:nama', Controller.findOne)
 
 /* delete a visitor */
 router.delete('/:id', Controller.deleteOne)

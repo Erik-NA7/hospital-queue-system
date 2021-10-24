@@ -11,8 +11,6 @@ export interface vistor {
 
 const baseUrl = "http://localhost:3000/api/visitors";
   
-
-
 @Injectable({
   providedIn: "root"
 })
@@ -28,12 +26,8 @@ export class VisitorsService {
       return this.http.get(baseUrl);
   }
 
-  get(id): Observable<any> {
-    return this.http.get(`${baseUrl}/${id}`)
-  }
-
-  next(): Observable<any> {
-    return this.http.get(`${baseUrl}/next`)
+  get(nama): Observable<any> {
+    return this.http.get(`${baseUrl}/${nama}`)
   }
 
   delete(id): Observable<any> {
@@ -42,9 +36,5 @@ export class VisitorsService {
 
   deleteAll(): Observable<any> {
     return this.http.delete(baseUrl);
-  }
-
-  requestNumber(data): Observable<any> {
-    return this.http.post(`${baseUrl}/number`, data)
   }
 }

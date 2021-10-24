@@ -13,8 +13,8 @@ export class RequestQueueNumberComponent implements OnInit {
 
   queueNumber: any;
   visitCategory = "";
-  
   submitted = false;
+  invalidsubmit = false;
 
   constructor(private queueService: QueueService)  { }
 
@@ -22,21 +22,27 @@ export class RequestQueueNumberComponent implements OnInit {
   }
 
   requestNumber(): void {
-    const data = {
-      kategoriKunjungan: this.visitCategory
+    if (!this.visitCategory) {
+      this.invalidsubmit = true;
     }
-
-    this.queueService.create (data)
-    .subscribe(
-      response => {
-        console.log(response);
-        this.queueNumber = response;
-        this.submitted = true;
-      },
-      error => {
-        console.log(error);
+    
+    if (this.visitCategory) {
+      const data = {
+        kategoriKunjungan: this.visitCategory
       }
-    )
+      this.queueService.create(data)
+      .subscribe(
+        response => {
+          console.log(data);
+          this.queueNumber = response;
+          this.invalidsubmit = false;
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        }
+      )
+    }
   }
 
   newNumber(): void {

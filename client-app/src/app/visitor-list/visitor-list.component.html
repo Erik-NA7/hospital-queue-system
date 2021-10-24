@@ -1,60 +1,37 @@
 <mat-toolbar class="myheader">
   <span>Visitors List</span>
 </mat-toolbar>
-<div class="container" *ngId="dataSource">
-  <mat-card>
-    <!-- <table>
-      <tr>
-        <mat-cel/mat-cell>Name</mat-cell>
-        <mat-cel/mat-cell>Visit Category</mat-cell>
-        <mat-cel/mat-cell>Patient Category</mat-cell>
-        <mat-cel/mat-cell>Registered Date</mat-cell>
-      </tr>
-      <tr *ngFor="let item of visitors">
-        <mat-cel/mat-cell> {{ item.nama }}</mat-cell>
-        <mat-cel/mat-cell>{{ item.kategoriKunjungan }}</mat-cell>
-        <mat-cel/mat-cell>{{ item.kategoriPasien }}</mat-cell>
-        <mat-cel/mat-cell>{{ item.tanggalDaftar }}</mat-cell>
-      </tr>
-    </table> -->
-  
-    <table mat-table [dataSource]="dataSource.items" class="mat-elevation-z8">
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-     
-      <ng-container matColumnDef="nama">
-        <mat-header-cell mat-header-cell *matHeaderCellDef>Nama</mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.nama }} </mat-cell>
-      </ng-container>
-  
-     
-      <ng-container matColumnDef="visitCategory">
-        <mat-header-cell mat-header-cell *matHeaderCellDef>Visit Category</mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.kategoriKunjungan }} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="patientCategory">
-        <mat-header-cell mat-header-cell *matHeaderCellDef>Patient Category</mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.kategoriPasien }} </mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="dateRegistered">
-        <mat-header-cell mat-header-cell *matHeaderCellDef>Date Registered</mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row.tanggalDaftar }} </mat-cell>
-      </ng-container>
-        
-    </table>
-  
-  
-  
-  
-  
-  
-  
-  
+<div class="container">
+  <mat-card class="search-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="visitor">
+    </mat-form-field>
+    <button mat-raised-button class="mybutton" color="primary" (click)="searchVisitor()">Search</button>
   </mat-card>
-  <div class="button-container">
-    <button mat-raised-button class="mybutton" color="primary" (click)="refreshList()">Refresh</button>
-  </div>
+  <mat-card class="visitor-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Visit Category</th>
+          <th>Patient Category</th>
+          <th>Registered Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of visitors">
+          <td> {{ item.nama }}</td>
+          <td>{{ item.kategoriKunjungan }}</td>
+          <td>{{ item.kategoriPasien }}</td>
+          <td>{{ item.tanggalDaftar }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="button-container">
+      <button mat-raised-button class="mybutton" color="primary" (click)="refreshList()">Refresh</button>
+    </div>
+  </mat-card>
+ 
 </div>
 

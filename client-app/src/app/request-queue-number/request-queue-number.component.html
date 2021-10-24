@@ -6,15 +6,18 @@
     <h3>Request Number</h3>
     <mat-form-field appearance="fill">
       <mat-label>Visit Category</mat-label>
-      <mat-select [(ngModel)]="visitCategory">
+      <mat-select [(ngModel)]="visitCategory" required>
         <mat-option value="A">A</mat-option>
         <mat-option value="B">B</mat-option>
         <mat-option value="C">C</mat-option>
       </mat-select>
-    </mat-form-field> 
+    </mat-form-field>
+    <div *ngIf="invalidsubmit">
+      <p class="invalid-warning">Pilih Kategori</p>  
+    </div> 
     <div class="button-container">
       <button mat-raised-button class="mybutton" color="primary" (click)="requestNumber()">Get Number</button>
-    </div>
+    </div>   
     <div *ngIf="submitted" class="display-newnumber">
       <h2>Hospital Queue</h2>
       <p>Nomor Antrian Anda:</p>

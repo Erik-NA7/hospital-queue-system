@@ -6,11 +6,11 @@
     <h3>Visitor Data</h3>
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="visitor.nama">
+      <input matInput required [(ngModel)]="visitor.nama">
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Kategori Kunjungan</mat-label>
-      <mat-select [(ngModel)]="visitor.kategoriKunjungan">
+      <mat-select aria-required="true" [(ngModel)]="visitor.kategoriKunjungan">
         <mat-option value="A">A</mat-option>
         <mat-option value="B">B</mat-option>
         <mat-option value="C">C</mat-option>
@@ -19,7 +19,7 @@
   
     <mat-form-field appearance="fill">
       <mat-label>Kategori Pasien</mat-label>
-      <mat-select [(ngModel)]="visitor.kategoriPasien">
+      <mat-select aria-required="true" [(ngModel)]="visitor.kategoriPasien">
         <mat-option value="PA">PA</mat-option>
         <mat-option value="PB">PB</mat-option>
         <mat-option value="PC">PC</mat-option>

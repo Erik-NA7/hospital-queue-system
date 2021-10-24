@@ -46,9 +46,9 @@ exports.findAll = async (req, res) => {
   })
 }
 
-// get a visitor by id on the queue
+// get a visitor by name
 exports.findOne = async (req, res) => {
-  await Visitor.findById(req.params.id)
+  await Visitor.find({"nama": req.params.nama})
   .then(visitor => {
     res.json(visitor)
   })
