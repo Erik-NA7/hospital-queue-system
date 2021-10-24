@@ -1,5 +1,7 @@
 # Hospital queue system
 
+run npm install in project root directory then run again inside "/client-app" directory
+
 ### I use official mongodb docker container in my development
 ### I use "visitorqueue" As the container name, change the name inside server.js if you use other name
 
