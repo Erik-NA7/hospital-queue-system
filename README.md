@@ -1,4 +1,4 @@
-# hotel-queue-system
+# Hospital queue system
 
 ### I use official mongodb docker container in my development
 ### I use "visitorqueue" As the container name, change the name inside server.js if you use other name
