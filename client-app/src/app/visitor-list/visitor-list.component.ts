@@ -12,13 +12,14 @@ export class VisitorListComponent implements OnInit {
   visitor = "";
 
   constructor(private visitorService: VisitorsService) {
-    this.visitorService.getAll().subscribe(data => {
-      this.visitors = data
-      console.log(this.visitors)
-    })
+    //this.visitorService.getAll().subscribe(data => {
+      //this.visitors = data
+      //console.log(this.visitors)
+    //})
   }
 
   ngOnInit(): void {
+  	this.getVisitors();
   }
 
   getVisitors(): void {
