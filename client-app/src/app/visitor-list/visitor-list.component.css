@@ -1,9 +1,13 @@
+.visitor-list-container {
+  max-width: 800px;
+}
+
+
 .container {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .visitor-list {

@@ -54,8 +54,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/visitors', visitorsRouter);
 app.use('/api/queue', queueRouter);
 
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+// app.use(function (req, res, next) {
+//   next(createError(404));
+// });
 
 module.exports = app;

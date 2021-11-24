@@ -1,37 +1,35 @@
-<mat-toolbar class="myheader">
-  <span>Visitors List</span>
-</mat-toolbar>
-<div class="container">
-  <mat-card class="search-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="visitor">
-    </mat-form-field>
-    <button mat-raised-button class="mybutton" color="primary" (click)="searchVisitor()">Search</button>
-  </mat-card>
-  <mat-card class="visitor-list">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Visit Category</th>
-          <th>Patient Category</th>
-          <th>Registered Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of visitors">
-          <td> {{ item.nama }}</td>
-          <td>{{ item.kategoriKunjungan }}</td>
-          <td>{{ item.kategoriPasien }}</td>
-          <td>{{ item.tanggalDaftar }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="button-container">
-      <button mat-raised-button class="mybutton" color="primary" (click)="refreshList()">Refresh</button>
-    </div>
-  </mat-card>
- 
-</div>
-
+  <mat-toolbar class="myheader">
+    <span>Visitors List</span>
+  </mat-toolbar>
+  <div class="container">
+    <mat-card class="search-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="visitor">
+      </mat-form-field>
+      <button mat-raised-button class="mybutton" color="primary" (click)="searchVisitor()">Search</button>
+    </mat-card>
+    <mat-card class="visitor-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Visit Category</th>
+            <th>Patient Category</th>
+            <th>Registered Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of visitors">
+            <td> {{ item.nama }}</td>
+            <td>{{ item.kategoriKunjungan }}</td>
+            <td>{{ item.kategoriPasien }}</td>
+            <td>{{ item.tanggalDaftar }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button-container">
+        <button mat-raised-button class="mybutton" color="primary" (click)="refreshList()">Refresh</button>
+      </div>
+    </mat-card>
+  </div>
